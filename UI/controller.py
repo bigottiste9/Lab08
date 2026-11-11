@@ -33,6 +33,7 @@ class Controller:
                     self._view.lista_visualizzazione.controls.append(
                         ft.Text(f"{distributore_media[0]}: {distributore_media[1]:.3f} €/litro")
                     )
+            self._view.update()
 
     def calcola_sequenza(self, e):
         if self.mese_selezionato == 0:
@@ -43,3 +44,4 @@ class Controller:
             self._view.lista_visualizzazione.controls.append(ft.Text(f"La sequenza ottima ha costo {costo:.2f}€ ed è:"))
             for stop in sequenza_ottima:
                 self._view.lista_visualizzazione.controls.append(ft.Text(stop))
+            self._view.update()
